@@ -2,6 +2,27 @@
    B.U. BHANDARI HONDA PUNE — SCRIPT
 ===================================================== */
 
+/* ---------- SPLASH / PRELOADER ---------- */
+(function () {
+  if (document.readyState === 'loading') document.body.classList.add('no-scroll');
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+  const MIN_VIEW_TIME = 900;
+  const start = performance.now();
+  const reveal = () => {
+    document.body.classList.remove('no-scroll');
+    preloader.classList.add('is-hidden');
+  };
+  const schedule = () => {
+    const elapsed = performance.now() - start;
+    setTimeout(reveal, Math.max(0, MIN_VIEW_TIME - elapsed));
+  };
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule);
+  document.addEventListener('DOMContentLoaded', () => { if (document.readyState === 'complete') schedule(); });
+  setTimeout(reveal, 4500);
+})();
+
 /* ---------- MOTORCYCLE DATA ---------- */
 const models = [
   { name: 'Activa 6G', tagline: 'Pune\'s favourite scooter', price: 'from ₹77,181', img: 'https://images.unsplash.com/photo-1519750292352-c9fc17322ed7?auto=format&fit=crop&w=600&q=70' },
@@ -47,10 +68,17 @@ function renderModels() {
 const nav = document.querySelector('.navigation');
 
 function handleScroll() {
-  if (window.scrollY > 10) {
+  const y = window.scrollY;
+  if (y > 10) {
     nav.classList.add('nav--scrolled');
   } else {
     nav.classList.remove('nav--scrolled');
+  }
+  const progress = document.getElementById('scrollProgress');
+  if (progress) {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
   }
 }
 window.addEventListener('scroll', handleScroll, { passive: true });
@@ -248,3 +276,10 @@ function protectImages() {
 
 renderModels();
 protectImages();
+
+/* ---------- SERVICE WORKER (PWA) ---------- */
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}

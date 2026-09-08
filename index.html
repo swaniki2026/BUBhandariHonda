@@ -8,6 +8,16 @@
 <meta name="keywords" content="Honda showroom pune, B U Bhandari Honda, Honda bike dealer Pune, Honda service center Pune, Honda two wheeler Pune">
 <meta name="author" content="B.U. Bhandari Honda">
 
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#cc0000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BU Bhandari Honda">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
 <!-- Open Graph -->
 <meta property="og:title" content="B.U. Bhandari Honda Pune — Ride With Trust">
 <meta property="og:description" content="Honda two wheeler dealer in Pune. Showrooms at Camp, Viman Nagar, Bhawani Peth &amp; Mundhwa. Since 2002, serving 1 Lakh+ happy families.">
@@ -18,6 +28,29 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="B.U. Bhandari Honda Pune — Ride With Trust">
 <meta name="twitter:description" content="Honda two wheeler dealer in Pune since 2002. Showrooms &amp; expert service across Pune.">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "B.U. Bhandari Honda",
+  "url": "https://bubhandarihonda.com",
+  "telephone": "+917720031883",
+  "email": "honda@bubhandari.net",
+  "foundingDate": "2002",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Petit Estate, Near Vijay Sales, Connaught Road, Pune Station",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411001",
+    "addressCountry": "IN"
+  },
+  "areaServed": "Pune",
+  "sameAs": ["https://www.instagram.com/b.u.bhandarihonda"]
+}
+</script>
 
 <!-- Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,31 +65,119 @@
 </head>
 <body>
 
+<!-- Scroll progress -->
+<div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ SPLASH / PRELOADER ============ -->
+<div id="preloader" class="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <span class="preloader-ring">
+      <svg class="preloader-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#cc0000"/>
+        <rect x="13" y="29" width="38" height="6" rx="3" fill="#ffffff"/>
+        <rect x="29" y="13" width="6" height="38" rx="3" fill="#ffffff"/>
+        <path d="M15 12l6 0M43 12l6 0" stroke="#e4032e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M15 52l6 0M43 52l6 0" stroke="#e4032e" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+    </span>
+    <p class="preloader-title">B.U. BHANDARI</p>
+    <p class="preloader-sub">H O N D A</p>
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g>
+  </symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></g>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></g>
+  </symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></g>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></g>
+  </symbol>
+  <symbol id="i-lifebuoy" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></g>
+  </symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></g>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></g>
+  </symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24">
+    <path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></g>
+  </symbol>
+  <symbol id="i-motorcycle" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="5.5" cy="17.5" r="2.5"/>
+      <circle cx="18.5" cy="17.5" r="2.5"/>
+      <path d="M8 17.5h3.2l8.3-6.3-3.2-.6-5.9 1L8 15.5"/>
+      <path d="M8 15.5L6.6 13H3.5"/>
+      <path d="M12.5 11l1.6-2.5H16.8"/>
+    </g>
+  </symbol>
+  <symbol id="i-rupee" viewBox="0 0 24 24">
+    <text x="12" y="16.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="currentColor" stroke="none">&#8377;</text>
+  </symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></g>
+  </symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></g>
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></g>
+  </symbol>
+</svg>
+
 <!-- ============ NAVIGATION ============ -->
 <header class="navigation" id="navbar">
   <div class="navigation-container">
     <a href="#home" class="logo_wrapper">
-      <div class="brand-logo">
-        <span class="brand-logo_h">Honda</span>
-        <span class="brand-logo_sub">B.U. Bhandari</span>
-      </div>
+      <span class="brand-logo">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#cc0000"/>
+          <rect x="13" y="29" width="38" height="6" rx="3" fill="#ffffff"/>
+          <rect x="29" y="13" width="6" height="38" rx="3" fill="#ffffff"/>
+          <path d="M15 12l6 0M43 12l6 0" stroke="#e4032e" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M15 52l6 0M43 52l6 0" stroke="#e4032e" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="brand-logo_text">
+          <span class="brand-logo_h">Honda</span>
+          <span class="brand-logo_sub">B.U. Bhandari</span>
+        </span>
+      </span>
     </a>
     <nav class="nav-menu" id="navMenu">
       <div class="dropdown">
-        <button class="dropdown-toggle" data-dropdown="models-menu">Motorcycles <span class="arrow">&#9662;</span></button>
+        <button class="dropdown-toggle" data-dropdown="models-menu">Motorcycles <svg class="icon arrow" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
         <div class="dropdown_list" id="models-menu">
           <div class="dropdown-list_wrapper">
             <h3 class="nav-motorcycles_heading">Welcome, Rider.</h3>
             <div class="collection-list_models" id="modelsGrid"></div>
-            <a href="#models" class="primary_button" style="margin-top:1.5rem;">View All Motorcycles &rarr;</a>
+            <a href="#models" class="primary_button" style="margin-top:1.5rem;">View All Motorcycles <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
           </div>
           <div class="contact_banner">
             <a href="tel:+917720031883" class="contact-details_wrapper">
-              <div class="_30-30-icon-wrap">&#9742;</div>
+              <div class="_30-30-icon-wrap"><svg class="icon"><use href="#i-phone"/></svg></div>
               <p>+91 77200 31883</p>
             </a>
             <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Pune+Station" target="_blank" rel="noopener" class="contact-details_wrapper">
-              <div class="_30-30-icon-wrap">&#9873;</div>
+              <div class="_30-30-icon-wrap"><svg class="icon"><use href="#i-map-pin"/></svg></div>
               <div class="nav-contact-link_text">Pune Station, Pune</div>
             </a>
           </div>
@@ -64,27 +185,27 @@
       </div>
 
       <div class="dropdown">
-        <button class="dropdown-toggle" data-dropdown="services-menu">Services <span class="arrow">&#9662;</span></button>
+        <button class="dropdown-toggle" data-dropdown="services-menu">Services <svg class="icon arrow" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
         <div class="dropdown_list" id="services-menu">
           <div class="dropdown-list_wrapper">
             <h3 class="nav-motorcycles_heading">Expert Care, Smooth Rides</h3>
             <a href="#services" class="nav-services-content_wrapper">
-              <span class="nav-services_icon">&#128295;</span>
+              <span class="nav-services_icon"><svg class="icon"><use href="#i-tool"/></svg></span>
               <div><h5>Service &amp; Repair</h5><p>Genuine Honda parts, certified technicians</p></div>
             </a>
             <a href="#services" class="nav-services-content_wrapper">
-              <span class="nav-services_icon">&#128368;</span>
+              <span class="nav-services_icon"><svg class="icon"><use href="#i-calendar"/></svg></span>
               <div><h5>Annual Maintenance Contract</h5><p>Worry-free maintenance plans</p></div>
             </a>
             <a href="#services" class="nav-services-content_wrapper">
-              <span class="nav-services_icon">&#127758;</span>
+              <span class="nav-services_icon"><svg class="icon"><use href="#i-lifebuoy"/></svg></span>
               <div><h5>Road Side Assistance</h5><p>Help whenever you ride</p></div>
             </a>
             <a href="#services" class="nav-services-content_wrapper">
-              <span class="nav-services_icon">&#128161;</span>
+              <span class="nav-services_icon"><svg class="icon"><use href="#i-zap"/></svg></span>
               <div><h5>Extended Warranty</h5><p>Extra years of protection</p></div>
             </a>
-            <a href="#services" class="primary_button" style="margin-top:1.5rem;">View All Services &rarr;</a>
+            <a href="#services" class="primary_button" style="margin-top:1.5rem;">View All Services <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
           </div>
         </div>
       </div>
@@ -95,8 +216,8 @@
     </nav>
 
     <div class="social-links_wrapper">
-      <a href="https://wa.me/917720031883" target="_blank" rel="noopener" aria-label="WhatsApp">&#128172;</a>
-      <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" aria-label="Instagram">&#128247;</a>
+      <a href="https://wa.me/917720031883" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp"/></svg></a>
+      <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
     </div>
 
     <button class="nav__toggle" id="menuToggle" aria-label="Open menu">
@@ -110,8 +231,8 @@
     <a href="#about" class="overlay-link">About</a>
     <a href="#contact" class="overlay-link">Contact</a>
     <div class="overlay-contact">
-      <a href="tel:+917720031883">&#9742; +91 77200 31883</a>
-      <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener">&#128247; @b.u.bhandarihonda</a>
+      <a href="tel:+917720031883"><svg class="icon"><use href="#i-phone"/></svg> +91 77200 31883</a>
+      <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener"><svg class="icon"><use href="#i-instagram"/></svg> @b.u.bhandarihonda</a>
     </div>
   </div>
 </header>
@@ -126,7 +247,7 @@
       <div class="hero-content">
         <h1>Dream Bold, Ride Fearlessly</h1>
         <p>Discover the complete range of Honda motorcycles &amp; scooters at B.U. Bhandari Honda, Pune.</p>
-        <a href="#models" class="primary_button hero-btn">Explore Motorcycles &rarr;</a>
+        <a href="#models" class="primary_button hero-btn">Explore Motorcycles <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
     <div class="hero-slide" style="background-image:url('https://plus.unsplash.com/premium_photo-1664299568114-70d0d5834d78?auto=format&fit=crop&w=1600&q=80')">
@@ -134,7 +255,7 @@
       <div class="hero-content">
         <h1>Fuel Your Passion</h1>
         <p>Expert service, genuine parts and honest advice — Pune's most trusted Honda workshop.</p>
-        <a href="#services" class="primary_button hero-btn">Book A Service &rarr;</a>
+        <a href="#services" class="primary_button hero-btn">Book A Service <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
     <div class="hero-slide" style="background-image:url('https://plus.unsplash.com/premium_photo-1744395627552-1349f5d80199?auto=format&fit=crop&w=1600&q=80')">
@@ -142,7 +263,7 @@
       <div class="hero-content">
         <h1>Gear Up To Go!</h1>
         <p>Helmets, riding gear and lifestyle accessories to complete your ride.</p>
-        <a href="#accessories" class="primary_button hero-btn">Shop Accessories &rarr;</a>
+        <a href="#accessories" class="primary_button hero-btn">Shop Accessories <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
     <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1590506978404-d3e577192a18?auto=format&fit=crop&w=1600&q=80')">
@@ -150,12 +271,12 @@
       <div class="hero-content">
         <h1>Ride With Us</h1>
         <p>Join our riding community — group rides, events and the Honda spirit.</p>
-        <a href="#contact" class="primary_button hero-btn">Join The Tribe &rarr;</a>
+        <a href="#contact" class="primary_button hero-btn">Join The Tribe <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
   <div class="hero-dots" id="heroDots"></div>
-  <a href="#leadForm" class="hero-scroll">&#8595;</a>
+  <a href="#leadForm" class="hero-scroll" aria-label="Scroll down"><svg class="icon icon-down" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
 </section>
 
 <!-- ============ LEAD CAPTURE FORM ============ -->
@@ -199,7 +320,7 @@
       <label class="whatsapp-check">
         <input type="checkbox" name="whatsapp" id="leadWhatsapp"> <span>I'm available on WhatsApp</span>
       </label>
-      <button type="submit" class="primary_button form-submit">Request A Call Back &rarr;</button>
+      <button type="submit" class="primary_button form-submit">Request A Call Back <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></button>
       <p class="form-message" id="formMessage"></p>
     </form>
   </div>
@@ -215,7 +336,7 @@
     </div>
     <div class="products-grid" id="productsGrid"></div>
     <div style="text-align:center;margin-top:3rem;">
-      <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Honda%20models%20at%20B.U.%20Bhandari%20Honda%20Pune." target="_blank" rel="noopener" class="primary_button button-invert">Ask On WhatsApp &rarr;</a>
+      <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Honda%20models%20at%20B.U.%20Bhandari%20Honda%20Pune." target="_blank" rel="noopener" class="primary_button button-invert">Ask On WhatsApp <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
     </div>
   </div>
 </section>
@@ -276,7 +397,7 @@
           <div>
             <h3>Service &amp; Repair</h3>
             <p>Factory-trained technicians and 100% genuine Honda parts keep your machine running like new.</p>
-            <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20book%20a%20service%20for%20my%20Honda." target="_blank" rel="noopener" class="text-link">Book Now &rarr;</a>
+            <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20book%20a%20service%20for%20my%20Honda." target="_blank" rel="noopener" class="text-link">Book Now <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
           </div>
         </div>
         <div class="service-row" data-service="1">
@@ -284,7 +405,7 @@
           <div>
             <h3>Annual Maintenance Contract</h3>
             <p>Fixed-cost maintenance plans so your bike stays in peak condition all year round.</p>
-            <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20know%20about%20the%20Annual%20Maintenance%20Contract." target="_blank" rel="noopener" class="text-link">Learn More &rarr;</a>
+            <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20know%20about%20the%20Annual%20Maintenance%20Contract." target="_blank" rel="noopener" class="text-link">Learn More <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
           </div>
         </div>
         <div class="service-row" data-service="2">
@@ -292,7 +413,7 @@
           <div>
             <h3>Road Side Assistance</h3>
             <p>Breakdown help wherever you ride in Pune and beyond. We've got your back.</p>
-            <a href="https://wa.me/917720031883?text=Hi%2C%20I%20need%20Road%20Side%20Assistance%20help." target="_blank" rel="noopener" class="text-link">Get Covered &rarr;</a>
+            <a href="https://wa.me/917720031883?text=Hi%2C%20I%20need%20Road%20Side%20Assistance%20help." target="_blank" rel="noopener" class="text-link">Get Covered <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
           </div>
         </div>
         <div class="service-row" data-service="3">
@@ -300,10 +421,10 @@
           <div>
             <h3>Extended Warranty</h3>
             <p>Add years of worry-free riding with genuine extended warranty options.</p>
-            <a href="https://wa.me/917720031883?text=Hi%2C%20tell%20me%20about%20Extended%20Warranty." target="_blank" rel="noopener" class="text-link">Explore &rarr;</a>
+            <a href="https://wa.me/917720031883?text=Hi%2C%20tell%20me%20about%20Extended%20Warranty." target="_blank" rel="noopener" class="text-link">Explore <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
           </div>
         </div>
-        <a href="https://wa.me/917720031883" target="_blank" rel="noopener" class="primary_button" style="margin-top:1.5rem;">View All Services &rarr;</a>
+        <a href="https://wa.me/917720031883" target="_blank" rel="noopener" class="primary_button" style="margin-top:1.5rem;">View All Services <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -323,7 +444,7 @@
         <div class="accessory-card-content">
           <h3>Rider Accessories</h3>
           <p>Helmets, gloves, jackets and gear.</p>
-          <a href="#contact" class="text-link">Visit Our Stores &rarr;</a>
+          <a href="#contact" class="text-link">Visit Our Stores <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
       <div class="accessory-card" style="background-image:url('https://images.unsplash.com/photo-1549636367-13c144c47063?auto=format&fit=crop&w=700&q=70');">
@@ -331,7 +452,7 @@
         <div class="accessory-card-content">
           <h3>Bike Accessories</h3>
           <p>Performance parts, luggage and more.</p>
-          <a href="#contact" class="text-link">Visit Our Stores &rarr;</a>
+          <a href="#contact" class="text-link">Visit Our Stores <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
       <div class="accessory-card" style="background-image:url('https://images.unsplash.com/photo-1585153520999-d4f056ce8635?auto=format&fit=crop&w=700&q=70');">
@@ -339,7 +460,7 @@
         <div class="accessory-card-content">
           <h3>Lifestyle Accessories</h3>
           <p>Apparel and travel gear for riders.</p>
-          <a href="#contact" class="text-link">Visit Our Stores &rarr;</a>
+          <a href="#contact" class="text-link">Visit Our Stores <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
     </div>
@@ -363,7 +484,7 @@
       <div class="events-text">
         <h3>Go Ridin'</h3>
         <p>From coffee hangouts to weekend mountain runs, our community brings riders together. Join our next ride and make the journey part of the joy.</p>
-        <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" class="primary_button">Follow Our Rides &rarr;</a>
+        <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" class="primary_button">Follow Our Rides <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -376,8 +497,8 @@
     <h2>Ready To Ride Your Honda?</h2>
     <p>Visit any of our four showrooms across Pune, or talk to us today.</p>
     <div class="cta-buttons">
-      <a href="tel:+917720031883" class="primary_button">&#9742; Call Us &rarr;</a>
-      <a href="https://wa.me/917720031883" target="_blank" rel="noopener" class="primary_button button-invert">&#128172; WhatsApp &rarr;</a>
+      <a href="tel:+917720031883" class="primary_button"><svg class="icon"><use href="#i-phone"/></svg> Call Us</a>
+      <a href="https://wa.me/917720031883" target="_blank" rel="noopener" class="primary_button button-invert"><svg class="icon"><use href="#i-whatsapp"/></svg> WhatsApp</a>
     </div>
   </div>
 </section>
@@ -412,7 +533,7 @@
           </select>
         </div>
       </div>
-      <button type="submit" class="primary_button form-submit">Get My Quote &rarr;</button>
+      <button type="submit" class="primary_button form-submit">Get My Quote <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></button>
       <p class="form-message" id="quoteMessage"></p>
     </form>
   </div>
@@ -431,36 +552,36 @@
         <span class="store-type">Showroom &amp; Service</span>
         <h3>Pune Station (Head)</h3>
         <p>Sr. No. 11/5, 12/1, Petit Estate, Near Vijay Sales, Cannaught Road, Pune Station, Agarkar Nagar, Pune 411001</p>
-        <p class="store-phone">&#9742; +91 77200 31883</p>
-        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Petit+Estate+Pune+Station" target="_blank" rel="noopener" class="text-link">Get Directions &rarr;</a>
+        <p class="store-phone"><svg class="icon"><use href="#i-phone"/></svg> +91 77200 31883</p>
+        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Petit+Estate+Pune+Station" target="_blank" rel="noopener" class="text-link">Get Directions <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="store-card">
         <span class="store-type">Showroom</span>
         <h3>Camp</h3>
         <p>East Street Galleria, Saifee Lane, East Street, Camp, Pune 411001</p>
-        <p class="store-phone">&#9742; 020 6720 9999</p>
-        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Camp+East+Street+Pune" target="_blank" rel="noopener" class="text-link">Get Directions &rarr;</a>
+        <p class="store-phone"><svg class="icon"><use href="#i-phone"/></svg> 020 6720 9999</p>
+        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Camp+East+Street+Pune" target="_blank" rel="noopener" class="text-link">Get Directions <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="store-card">
         <span class="store-type">Showroom</span>
         <h3>Viman Nagar</h3>
         <p>Viman Nagar, Pune, Maharashtra</p>
-        <p class="store-phone">&#9742; +91 77200 31883</p>
-        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Viman+Nagar+Pune" target="_blank" rel="noopener" class="text-link">Get Directions &rarr;</a>
+        <p class="store-phone"><svg class="icon"><use href="#i-phone"/></svg> +91 77200 31883</p>
+        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Viman+Nagar+Pune" target="_blank" rel="noopener" class="text-link">Get Directions <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="store-card">
         <span class="store-type">Showroom</span>
         <h3>Bhawani Peth</h3>
         <p>Bhawani Peth, Pune, Maharashtra</p>
-        <p class="store-phone">&#9742; +91 77200 31883</p>
-        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Bhawani+Peth+Pune" target="_blank" rel="noopener" class="text-link">Get Directions &rarr;</a>
+        <p class="store-phone"><svg class="icon"><use href="#i-phone"/></svg> +91 77200 31883</p>
+        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Bhawani+Peth+Pune" target="_blank" rel="noopener" class="text-link">Get Directions <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="store-card">
         <span class="store-type">Showroom &amp; Service</span>
         <h3>Mundhwa</h3>
         <p>Mundhwa, Pune, Maharashtra</p>
-        <p class="store-phone">&#9742; +91 77200 31883</p>
-        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Mundhwa+Pune" target="_blank" rel="noopener" class="text-link">Get Directions &rarr;</a>
+        <p class="store-phone"><svg class="icon"><use href="#i-phone"/></svg> +91 77200 31883</p>
+        <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Mundhwa+Pune" target="_blank" rel="noopener" class="text-link">Get Directions <svg class="icon icon-arrow"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
@@ -473,12 +594,19 @@
   <div class="footer-links-bar">
     <div class="container footer-top">
       <div class="brand-logo footer-logo">
-        <span class="brand-logo_h">Honda</span>
-        <span class="brand-logo_sub">B.U. Bhandari</span>
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#cc0000"/>
+          <rect x="13" y="29" width="38" height="6" rx="3" fill="#ffffff"/>
+          <rect x="29" y="13" width="6" height="38" rx="3" fill="#ffffff"/>
+        </svg>
+        <span class="brand-logo_text">
+          <span class="brand-logo_h">Honda</span>
+          <span class="brand-logo_sub">B.U. Bhandari</span>
+        </span>
       </div>
       <div class="footer-social">
-        <a href="https://wa.me/917720031883" target="_blank" rel="noopener" aria-label="WhatsApp">&#128172; WhatsApp</a>
-        <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" aria-label="Instagram">&#128247; Instagram</a>
+        <a href="https://wa.me/917720031883" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp"/></svg> WhatsApp</a>
+        <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg> Instagram</a>
       </div>
       <div class="footer-call">
         <span>Call us at:</span>
@@ -523,30 +651,30 @@
 </footer>
 
 <!-- ============ FLOATING ACTION BAR (right middle) ============ -->
-<div class="floating-bar" id="floatingBar">
+<div class="floating-bar" id="floatingBar" role="navigation" aria-label="Quick actions">
   <a href="tel:+917720031883" class="fab fab-call" aria-label="Call us">
-    <span class="fab-icon">&#9742;</span>
-    <span class="fab-label">Call</span>
+    <svg class="fab-icon" aria-hidden="true"><use href="#i-phone"/></svg>
+    <span class="fab-tip">Call Us</span>
   </a>
-  <a href="https://wa.me/917720031883" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="WhatsApp">
-    <span class="fab-icon">&#128172;</span>
-    <span class="fab-label">WhatsApp</span>
+  <a href="https://wa.me/917720031883" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Chat on WhatsApp">
+    <svg class="fab-icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    <span class="fab-tip">WhatsApp</span>
   </a>
-  <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" class="fab fab-instagram" aria-label="Instagram">
-    <span class="fab-icon">&#128247;</span>
-    <span class="fab-label">Instagram</span>
+  <a href="https://www.instagram.com/b.u.bhandarihonda" target="_blank" rel="noopener" class="fab fab-instagram" aria-label="Follow us on Instagram">
+    <svg class="fab-icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+    <span class="fab-tip">Instagram</span>
   </a>
   <a href="https://maps.google.com/?q=BU+Bhandari+Honda+Pune" target="_blank" rel="noopener" class="fab fab-locate" aria-label="Locate us">
-    <span class="fab-icon">&#9873;</span>
-    <span class="fab-label">Locate Us</span>
+    <svg class="fab-icon" aria-hidden="true"><use href="#i-map-pin"/></svg>
+    <span class="fab-tip">Locate Us</span>
   </a>
-  <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20book%20a%20test%20drive%20for%20a%20Honda%20at%20B.U.%20Bhandari%20Honda%20Pune." target="_blank" rel="noopener" class="fab fab-testdrive" aria-label="Take a test drive">
-    <span class="fab-icon">&#128663;</span>
-    <span class="fab-label">Test Drive</span>
+  <a href="https://wa.me/917720031883?text=Hi%2C%20I%20want%20to%20book%20a%20test%20drive%20for%20a%20Honda%20at%20B.U.%20Bhandari%20Honda%20Pune." target="_blank" rel="noopener" class="fab fab-testdrive" aria-label="Book a test drive">
+    <svg class="fab-icon" aria-hidden="true"><use href="#i-motorcycle"/></svg>
+    <span class="fab-tip">Test Drive</span>
   </a>
   <a href="#getQuote" class="fab fab-quote" aria-label="Get a quote">
-    <span class="fab-icon">&#8377;</span>
-    <span class="fab-label">Get Quote</span>
+    <svg class="fab-icon" aria-hidden="true"><use href="#i-rupee"/></svg>
+    <span class="fab-tip">Get Quote</span>
   </a>
 </div>
 
