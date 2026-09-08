@@ -1,6 +1,6 @@
 /* B.U. BHANDARI HONDA — SERVICE WORKER
    Network-first with cache fallback. Core assets precached for offline. */
-const CACHE = 'bub-handari-v1';
+const CACHE = 'bub-handari-v2';
 const CORE = [
   'index.html',
   'styles.css',

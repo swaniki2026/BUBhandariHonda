@@ -15,15 +15,16 @@ Design adapted from the Honda BigWing Bengaluru reference site (bigwingblr.com),
 - Sticky navigation with dropdowns (Motorcycles / Services) and mobile menu
 - **Splash / preloader** with animated B.U. Bhandari wing logo
 - Auto-playing hero slider with 4 taglines
-- Lead-capture form (redirects enquiry to WhatsApp)
-- Premium motorcycle range grid (9 models)
+- **Trust proof marquee bar** under the hero (dealer since 2002, 1 Lakh+ families, genuine parts, Google rating, 5 showrooms, 24×7 RSA)
+- **Horizontal snap rails** (≈1.2 cards visible with next-card peek + arrow controls) for Motorcycles, Accessories and Stores — **DaisyUI carousel components**
+- Dark cinematic motorcycle cards with daisyUI badges, high-res imagery
+- Lead-capture form at the **bottom of the page** (Call Back request → WhatsApp), plus a Get A Quote form
 - About section with animated stat counters
 - Services section with image-text sync on hover
-- Accessories, Community/Events, CTA banner, Get a Quote form
-- Stores/locations grid (5 Pune showrooms)
-- Full footer
+- Community/Events, CTA banner
 - **Floating action bar** (right-middle): Call, WhatsApp, Instagram, Locate Us, Test Drive, Get Quote — round SVG-icon buttons with hover tooltips
 - Scroll progress bar + installable PWA (offline caching)
+- **DaisyUI 5** (standalone CSS via jsDelivr) with a custom `bub` theme — Honda red primary on a dark base
 
 ## Contact details used
 - Phone / WhatsApp: **+91 77200 31883**
