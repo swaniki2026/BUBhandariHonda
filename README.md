@@ -1,0 +1,35 @@
+# B.U. Bhandari Honda — Pune
+
+Premium single-page website for **B.U. Bhandari Honda**, a trusted Honda two-wheeler dealer in Pune (dealership since 2002, family business legacy since 1920).
+
+Design adapted from the Honda BigWing Bengaluru reference site (bigwingblr.com), fully rebranded for B.U. Bhandari Honda Pune.
+
+## Files
+- `index.html` — Main page (semantic, SEO-ready)
+- `styles.css` — Full stylesheet (CSS variables, mobile-first, Honda red branding)
+- `script.js` — Interactions & animations
+
+## Features
+- Sticky navigation with dropdowns (Motorcycles / Services) and mobile menu
+- Auto-playing hero slider with 4 taglines
+- Lead-capture form (redirects enquiry to WhatsApp)
+- Premium motorcycle range grid (9 models)
+- About section with animated stat counters
+- Services section with image-text sync on hover
+- Accessories, Community/Events, CTA banner, Get a Quote form
+- Stores/locations grid (5 Pune showrooms)
+- Full footer
+- **Floating action bar** (right-middle): Call, WhatsApp, Instagram, Locate Us, Test Drive, Get Quote — each expands on hover to reveal its label
+
+## Contact details used
+- Phone / WhatsApp: **+91 77200 31883**
+- Instagram: **https://www.instagram.com/b.u.bhandarihonda**
+- Email: honda@bubhandari.net
+- Head showroom: Petit Estate, Near Vijay Sales, Cannaught Road, Pune Station, Agarkar Nagar, Pune 411001
+- Other showrooms: Camp, Viman Nagar, Bhawani Peth, Mundhwa
+
+## How to preview
+Open `index.html` in any browser — no server needed.
+
+## Note
+Prices shown are estimates. Please confirm exact on-road prices with the dealership before use.
