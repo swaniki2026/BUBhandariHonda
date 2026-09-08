@@ -4,15 +4,15 @@
 
 /* ---------- MOTORCYCLE DATA ---------- */
 const models = [
-  { name: 'Activa 6G', tagline: 'Pune\'s favourite scooter', price: 'from ₹77,181', img: 'https://source.unsplash.com/400x300/?scooter,red' },
-  { name: 'Dio', tagline: 'Sporty, stylish, agile', price: 'from ₹78,441', img: 'https://source.unsplash.com/400x300/?scooter,white' },
-  { name: 'Shine 125', tagline: 'Built to shine every day', price: 'from ₹81,251', img: 'https://source.unsplash.com/400x300/?motorcycle,blue' },
-  { name: 'SP 125', tagline: 'Smart performance', price: 'from ₹86,381', img: 'https://source.unsplash.com/400x300/?motorcycle,black' },
-  { name: 'Hornet 2.0', tagline: 'Street aggression redefined', price: 'from ₹1,37,000', img: 'https://source.unsplash.com/400x300/?sports,motorcycle' },
-  { name: 'Unicorn', tagline: 'The legendary commuter', price: 'from ₹1,10,000', img: 'https://source.unsplash.com/400x300/?motorcycle,metallic' },
-  { name: 'CB350', tagline: 'Honest, timeless, Honda soul', price: 'from ₹2,10,000', img: 'https://source.unsplash.com/400x300/?classic,motorcycle' },
-  { name: 'Highness CB350', tagline: 'The king of the road', price: 'from ₹2,20,000', img: 'https://source.unsplash.com/400x300/?vintage,motorcycle,chrome' },
-  { name: 'NX500', tagline: 'Adventure on every horizon', price: 'from ₹6,33,000', img: 'https://source.unsplash.com/400x300/?adventure,motorcycle,offroad' }
+  { name: 'Activa 6G', tagline: 'Pune\'s favourite scooter', price: 'from ₹77,181', img: 'https://images.unsplash.com/photo-1519750292352-c9fc17322ed7?auto=format&fit=crop&w=600&q=70' },
+  { name: 'Dio', tagline: 'Sporty, stylish, agile', price: 'from ₹78,441', img: 'https://images.unsplash.com/photo-1554223789-df81106a45ed?auto=format&fit=crop&w=600&q=70' },
+  { name: 'Shine 125', tagline: 'Built to shine every day', price: 'from ₹81,251', img: 'https://images.unsplash.com/photo-1549558373-aeb1559973b9?auto=format&fit=crop&w=600&q=70' },
+  { name: 'SP 125', tagline: 'Smart performance', price: 'from ₹86,381', img: 'https://images.unsplash.com/photo-1527537232679-89f0d63ea3f7?auto=format&fit=crop&w=600&q=70' },
+  { name: 'Hornet 2.0', tagline: 'Street aggression redefined', price: 'from ₹1,37,000', img: 'https://images.unsplash.com/photo-1627919522200-217fa02fe759?auto=format&fit=crop&w=600&q=70' },
+  { name: 'Unicorn', tagline: 'The legendary commuter', price: 'from ₹1,10,000', img: 'https://images.unsplash.com/photo-1611182150972-4094e06cba79?auto=format&fit=crop&w=600&q=70' },
+  { name: 'CB350', tagline: 'Honest, timeless, Honda soul', price: 'from ₹2,10,000', img: 'https://images.unsplash.com/photo-1561811565-6ed172b54cbe?auto=format&fit=crop&w=600&q=70' },
+  { name: 'Highness CB350', tagline: 'The king of the road', price: 'from ₹2,20,000', img: 'https://images.unsplash.com/photo-1611769828049-4e3481716dfd?auto=format&fit=crop&w=600&q=70' },
+  { name: 'NX500', tagline: 'Adventure on every horizon', price: 'from ₹6,33,000', img: 'https://images.unsplash.com/photo-1610202926204-c0c9b7d8f112?auto=format&fit=crop&w=600&q=70' }
 ];
 
 /* ---------- RENDER MODELS ---------- */
@@ -233,4 +233,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+/* ---------- IMAGE FALLBACK (never show a broken image) ---------- */
+const FALLBACK_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23151515'/%3E%3Ctext x='50%25' y='48%25' fill='%23e4032e' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle'%3EHONDA%3C%2Ftext%3E%3Ctext x='50%25' y='60%25' fill='%23ffffff' font-family='Arial' font-size='16' text-anchor='middle'%3EB.U. Bhandari Honda%3C%2Ftext%3E%3C%2Fsvg%3E";
+
+function protectImages() {
+  document.querySelectorAll('img').forEach(img => {
+    if (img.dataset.protected) return;
+    img.dataset.protected = '1';
+    img.addEventListener('error', () => {
+      img.src = FALLBACK_IMG;
+    });
+  });
+}
+
 renderModels();
+protectImages();
