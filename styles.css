@@ -448,6 +448,9 @@ body.no-scroll { overflow: hidden; }
   width: min(var(--max-width), 100% - var(--gutter) * 2);
   margin: 0 auto;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .hero-content h1 {
   font-size: clamp(2.5rem, 6.5vw, 5rem);

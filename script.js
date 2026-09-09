@@ -25,15 +25,15 @@
 
 /* ---------- MOTORCYCLE DATA ---------- */
 const models = [
-  { name: 'Activa 6G', tagline: 'Pune\'s favourite scooter', tag: 'City Favourite', price: 'from ₹77,181', img: 'https://images.unsplash.com/photo-1519750292352-c9fc17322ed7?auto=format&fit=crop&w=1920&q=75' },
-  { name: 'Dio', tagline: 'Sporty, stylish, agile', tag: 'Trending', price: 'from ₹78,441', img: 'https://images.unsplash.com/photo-1554223789-df81106a45ed?auto=format&fit=crop&w=1920&q=75' },
-  { name: 'Shine 125', tagline: 'Built to shine every day', tag: 'Fuel Efficient', price: 'from ₹81,251', img: 'https://images.unsplash.com/photo-1549558373-aeb1559973b9?auto=format&fit=crop&w=1920&q=75' },
+  { name: 'Activa 6G', tagline: 'Pune\'s favourite scooter', tag: 'City Favourite', price: 'from ₹77,181', img: 'https://images.unsplash.com/photo-1542683088-abb3da334598?auto=format&fit=crop&w=1920&q=75' },
+  { name: 'Dio', tagline: 'Sporty, stylish, agile', tag: 'Trending', price: 'from ₹78,441', img: 'https://images.unsplash.com/photo-1743262630026-984018524882?auto=format&fit=crop&w=1920&q=75' },
+  { name: 'Shine 125', tagline: 'Built to shine every day', tag: 'Fuel Efficient', price: 'from ₹81,251', img: 'https://images.unsplash.com/photo-1611916906759-4888e63eb5fd?auto=format&fit=crop&w=1920&q=75' },
   { name: 'SP 125', tagline: 'Smart performance', tag: 'Smart Choice', price: 'from ₹86,381', img: 'https://images.unsplash.com/photo-1527537232679-89f0d63ea3f7?auto=format&fit=crop&w=1920&q=75' },
   { name: 'Hornet 2.0', tagline: 'Street aggression redefined', tag: 'Street Beast', price: 'from ₹1,37,000', img: 'https://images.unsplash.com/photo-1627919522200-217fa02fe759?auto=format&fit=crop&w=1920&q=75' },
   { name: 'Unicorn', tagline: 'The legendary commuter', tag: 'Legend', price: 'from ₹1,10,000', img: 'https://images.unsplash.com/photo-1611182150972-4094e06cba79?auto=format&fit=crop&w=1920&q=75' },
   { name: 'CB350', tagline: 'Honest, timeless, Honda soul', tag: 'Most Loved', price: 'from ₹2,10,000', img: 'https://images.unsplash.com/photo-1561811565-6ed172b54cbe?auto=format&fit=crop&w=1920&q=75' },
   { name: 'Highness CB350', tagline: 'The king of the road', tag: 'Editor\'s Pick', price: 'from ₹2,20,000', img: 'https://images.unsplash.com/photo-1611769828049-4e3481716dfd?auto=format&fit=crop&w=1920&q=75' },
-  { name: 'NX500', tagline: 'Adventure on every horizon', tag: 'New Arrival', price: 'from ₹6,33,000', img: 'https://images.unsplash.com/photo-1610202926204-c0c9b7d8f112?auto=format&fit=crop&w=1920&q=75' }
+  { name: 'NX500', tagline: 'Adventure on every horizon', tag: 'New Arrival', price: 'from ₹6,33,000', img: 'https://images.unsplash.com/photo-1745164393024-2a2da0086859?auto=format&fit=crop&w=1920&q=75' }
 ];
 
 /* ---------- RENDER MODELS ---------- */
